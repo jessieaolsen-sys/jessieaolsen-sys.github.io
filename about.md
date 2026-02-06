@@ -2,7 +2,7 @@
 title: "About Me"
 ---
 
-![img of Jessie Olsen](itsmeee.JPG)
+<img src="images/itsmeee.JPG" alt="Jessie Olsen" height="300">
 
 ## Background
 
