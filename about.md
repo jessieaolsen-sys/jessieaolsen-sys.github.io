@@ -2,6 +2,8 @@
 title: "About Me"
 ---
 
+![img of Jessie Olsen](itsmeee.JPG)
+
 ## Background
 
 I am currently a Statistics: Data Science student at Brigham Young University, and  while it may only be my second year of school, I am %100 commited to statistics and graduate in a year. My interest in Stats began junior year of high school. I was trying to decide what path I wanted to pursue in college and kept running into walls. I wanted to study some form of math, but kept getting frustrated with the options my teachers presented to me. However, when I asked my extended family, multiple cousins encouraged my to explore the field of statistics. The following year I took AP Statistics and the rest is history. 
@@ -14,7 +16,7 @@ Thus far I've had multiple opportunities to prepare for my career such as my int
 
 ## Education
 
-- **[Statistics: Data Science]** - [Brigham Young University], [2027]
+- **Statistics: Data Science** - Brigham Young University, 2027
 - **Relevant Coursework**: Statistical Modeling, Data Analysis, Inference and Probability, Python, R Programing, Data Science Processes, Multivariable Calculus, Data Structures
 
 ## Skills & Interests
