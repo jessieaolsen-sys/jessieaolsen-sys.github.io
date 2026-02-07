@@ -6,7 +6,7 @@ title: "About Me"
 
 ## Background
 
-I am currently a Statistics: Data Science student at Brigham Young University, and  while it may only be my second year of school, I am %100 commited to statistics and graduate in a year. My interest in Stats began junior year of high school. I was trying to decide what path I wanted to pursue in college and kept running into walls. I wanted to study some form of math, but kept getting frustrated with the options my teachers presented to me. However, when I asked my extended family, multiple cousins encouraged my to explore the field of statistics. The following year I took AP Statistics and the rest is history. 
+I am currently a Statistics: Data Science student at Brigham Young University, and  while it may only be my second year of school, I am 100% commited to statistics and graduate in a year. My interest in Stats began junior year of high school. I was trying to decide what path I wanted to pursue in college and kept running into walls. I wanted to study some form of math, but kept getting frustrated with the options my teachers presented to me. However, when I asked my extended family, multiple cousins encouraged my to explore the field of statistics. The following year I took AP Statistics and the rest is history. 
 
 I really love my stats classes and the work I've had the opportunity to do in the field. After starting a data analyst internship this last semester I could not be more excited to dive into the field of data exploration and modeling. I'd love to someday have the opportunity to work for a large coorporation creating models that impact business decisions and markets.
 
