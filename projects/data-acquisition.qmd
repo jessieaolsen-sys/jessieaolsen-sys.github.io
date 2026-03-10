@@ -1,6 +1,6 @@
 ---
 title: "Data Acquisition Project"
-author: "Your Name"
+author: "Jessie Olsen"
 date: "2025-01-01"
 format:
   html:
