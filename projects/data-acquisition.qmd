@@ -8,4 +8,7 @@ format:
     toc: true
 ---
 
-This is coming down the pipeline. Check again later.
+# Data Aquisition Blog
+
+
+
