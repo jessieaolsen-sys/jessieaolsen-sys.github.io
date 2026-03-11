@@ -8,7 +8,60 @@ format:
     toc: true
 ---
 
-# Data Aquisition Blog
+# Broadway Shows and their Adaptations: A Data Acquisition Project
 
+## Introduction
+Broadway is a large and relatively popular industry. However, it is not accessible to everyone. Tickets can be expensive, and the shows are often only available in major cities. However, many Broadway shows have been adapted into movies, which are more widely accessible. The question though, is if these adaptations have been successful in terms of critical reception and audience appeal. This project aims to acquire data on Broadway shows and their movie adaptations that could be used to analyze the success of a movie adaptation relative to the success of it's Broadway show.
+The research question this data seeks to answer is "Are movies adapted from tony nominated broadway shows more successful than movies adapted from non-tony nominated shows?""
 
+## Sources
+This project pulls data from three sources: Wikepedia's list of [musicals adapted into feature films](https://en.wikipedia.org/wiki/List_of_musicals_adapted_into_feature_films), Wikepedia's list of [Tony nominations](https://en.wikipedia.org/wiki/Tony_Award_for_Best_Musical), and the [OMDb API](https://www.omdbapi.com/) for movie ratings.
 
+I chose to webscrape data from Wikipedia because it is openly licensed and explicitly allows automated access. Wikipedia’s content is published under a Creative Commons license, and its robots.txt file permits scraping of article pages so long as a proper user-agent is provided. I included a custom user agent in my requests, which is not only required by wikipedia, but also considered good scraping practice because it identifies my script and ensures transparency. I limited my request rate and only accessed publicly available pages, so my data collection followed ethical guidelines and respected the site’s resources.
+
+I then also used the OMDb API to gather movie data because it is a public, openly accessible API designed specifically for programming use. To access the API, I registered for a personal API key and agreed to OMDb’s usage terms, which allow non‑commercial and educational projects. I stayed within the request limits and did not attempt to scrape or access data in unsupported ways. Because OMDb provides a stable, well‑documented interface, using the API is both ethical and aligned with good data‑acquisition practice.
+
+## Data Acquisition Process
+The first step in webscraping is to create your request. I used the `requests` library in Python to send a GET request to the Wikipedia page containing the list of musicals adapted into feature films. I included a custom user agent in my request header to identify myself and ensure compliance with Wikipedia's scraping guidelines.
+
+```python
+url = "link"
+headers = {"User-Agent": "User-Agent Name (email@example.com)"}
+r = requests.get(url, headers=headers)
+```
+
+To scrape the wikipedia pages, I then used the pd.read_html() function from the pandas library to parse the HTML content and extract the relevant tables. I then looped through each table on both pages to extract musical titles and their corresponding movie adaptations as well as musicals with tony nominations. I stored the shows and their adaptations in a dictionary and the tony nominated shows in a list for later use.
+
+This should be a similar process for any website that contains data in tables. You can use the pd.read_html() function to extract tables from any webpage, and then filter the data based on your needs.
+
+Finally, I used the OMDb API to gather movie ratings for each of the movie adaptations. I sent a GET request to the API endpoint with the movie title, year, and my API key as parameters. The API returned a JSON response containing various details about the movie, including its ratings. I extracted the relevant ratings from the JSON response and stored them in a dictionary.
+
+To load in the api key, I used the `dotenv` library, which allows me to load environment variables from a `.env` file. This is a common method for keeping sensitive information like API keys secure and separate from your code.
+
+```python
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
+apikey = os.getenv("MY_API_KEY")
+```
+
+## Final Dataset
+The final dataset was a dataframe of 228 observations and 5 features: Musical, Movie, IMDb, RottenTomatoes, and Tony_Nominated. Musical and Movie are the names of the Broadway show and its movie adaptation, respectively. IMDb and RottenTomatoes are the ratings for the movie adaptation on those platforms, and Tony_Nominated is a boolean indicating whether the original Broadway show was nominated for a Tony award or not.
+
+```python
+import pandas as pd
+
+df = pd.read_csv("musical_adaptations.csv")
+df.head()
+```
+
+Little cleaning was necessary for this dataset, as the data was already in a structured format. However, I did have to convert the IMDb and RottenTomatoes ratings from strings to numeric values, and I also had to create the Tony_Nominated boolean feature based on whether the musical was in the list of Tony nominated shows. There was however, some cleaning done along the way to ensure that the movie titles were formatted correctly for the API requests, such as removing extra whitespace and separating the year from the title.
+
+### Limitations
+
+One quality consideration is the many missing values in the IMDb and RottenTomatoes ratings. This is likely because not all movies have been rated on these platforms, especially older or less popular adaptations. This could potentially bias any analysis of the data, as it may not be representative of the full range of movie adaptations. Bias could also enter an analysis due to the fact that some musicals have multiple movie adaptations, which could skew the results if not properly accounted for. Additionally, the dataset only includes musicals that have been adapted into feature films, so it may not capture all Broadway shows and their adaptations.
+
+Future applications of this data could be to add box office performance for each movie. While The ratings from IMDb and Rotten Tomatoes may not be entirely representative of a movie's success, as they are based on user reviews and can be influenced by various factors, adding the box office performance would be a powerful additional factore in determining their success.
+
+##### The code and final dataset for this project can be found on my [GitHub](https://github.com/jessieaolsen-sys/data-aquistion-code)
