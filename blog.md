@@ -4,7 +4,7 @@ As important as it is to wrangle data and get results, what use are those result
 
 While there are many options for building an interactive dashboard, the easiest and most effective option when working with R code is **R shiny**. 
 
-In this tutorial you will learn why you should use shiny, how to build a basic shiny app, and different ways you can begin to customize your dashboard. Hopefully after this tutorial
+In this tutorial you will learn why you should use shiny, how to build a basic shiny app, and different ways you can begin to customize your dashboard. Hopefully after this tutorial you will be able to apply this knowledge to real world problems and build a basic functioning dashboard.
 
 ## Benefits of R Shiny
 
