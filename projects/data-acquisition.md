@@ -49,13 +49,6 @@ apikey = os.getenv("MY_API_KEY")
 ## Final Dataset
 The final dataset was a dataframe of 228 observations and 5 features: Musical, Movie, IMDb, RottenTomatoes, and Tony_Nominated. Musical and Movie are the names of the Broadway show and its movie adaptation, respectively. IMDb and RottenTomatoes are the ratings for the movie adaptation on those platforms, and Tony_Nominated is a boolean indicating whether the original Broadway show was nominated for a Tony award or not.
 
-```python
-import pandas as pd
-
-df = pd.read_csv("musical_adaptations.csv")
-df.head()
-```
-
 Little cleaning was necessary for this dataset, as the data was already in a structured format. However, I did have to convert the IMDb and RottenTomatoes ratings from strings to numeric values, and I also had to create the Tony_Nominated boolean feature based on whether the musical was in the list of Tony nominated shows. There was however, some cleaning done along the way to ensure that the movie titles were formatted correctly for the API requests, such as removing extra whitespace and separating the year from the title.
 
 ### Limitations
